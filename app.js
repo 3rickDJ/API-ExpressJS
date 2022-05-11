@@ -33,6 +33,21 @@ app.post('/v1/explorers', (req, res) => {
   const requestBody = req.body //parametros de un cliente
   res.status(201).json({ message: "Created" })
 })
+
+// PUT creates an endpoint and this endpoint updates  a explorer
+app.put('/v1/explorers/:id', (req, res) => {
+  console.log(`Api Explorers Put reques ${new Date()}`)
+  console.log(`Update explorer with id ${req.params.id}`)
+  const requestBody = req.body
+  //Parameters of a client
+  // res.status(200).json({message: "Updated!"})
+  res.status(200).json({message: "Updated"})
+})
+
+
+
+
+
 // Con esto inicializamos esta app
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
