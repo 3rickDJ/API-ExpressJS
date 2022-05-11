@@ -20,6 +20,13 @@ app.get('/v1/explorers', (req, res) => {
   res.status(200).json(explorers)
 })
 
+// endpoint to return an explorer through an ID
+app.get('/v1/explorers/:id', (req, res) => {
+  console.log(`Api Explorers GET request ${new Date()}`)
+  console.log(`Getting explorer with id ${req.params.id}`)
+  const explorer = { id: 1, name: "Erick" }
+  res.status(200).json(explorer)
+})
 // endpoint which creates an explorer
 app.post('/v1/explorers', (req, res) => {
   console.log(`Api Explorers POST request ${new Date()}`)
