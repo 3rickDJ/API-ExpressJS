@@ -19,6 +19,13 @@ app.get('/v1/explorers', (req, res) => {
   const explorers = [explorer1, explorer2, explorer3, explorer4]
   res.status(200).json(explorers)
 })
+
+// endpoint which creates an explorer
+app.post('/v1/explorers', (req, res) => {
+  console.log(`Api Explorers POST request ${new Date()}`)
+  const requestBody = req.body //parametros de un cliente
+  res.status(201).json({ message: "Created" })
+})
 // Con esto inicializamos esta app
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
